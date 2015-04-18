@@ -1,0 +1,24 @@
+//test
+
+package
+{
+	import flash.display.*;
+	import flash.text.*;
+	import flash.utils.setIntervel;
+
+	public class HelloWorld extends Sprite
+	{
+		public function HelloWorld()
+		       var tf:TextField	= new TextField();
+		       tf.text = "Hello World";
+		       addChild(tf);
+			
+			var str:String	= tf.text;
+			var len:int	= 0;
+			
+			setIntervel(function():void{
+				tf.text = str.substr(0, len);
+				len	= (len % str.length) + 1;
+				}, 100);
+	}
+}
